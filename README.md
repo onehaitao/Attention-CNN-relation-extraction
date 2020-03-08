@@ -34,7 +34,7 @@ The training log can be seen in `train.log` and the official evaluation results 
 *Note*:
 * Some settings are different from those mentioned in the paper.
 * No validation set used during training.
-* Just complete the part of general *Attention-CNN*. WordNet and words around nominals are not used. More detail is available in Section 4 in this paper.
+* Just complete the part of general *Attention-CNN*. WordNet and words around nominals are not used. More details are available in Section 4 in this paper.
 * Although I try to set random seeds, it seems that the results of each run are a little different.
 * The result of my version is not ideal. Maybe my understanding is wrong. If you find it, please let me know.
 
