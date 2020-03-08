@@ -1,0 +1,90 @@
+--------------------------------------
+some config:
+data_dir = ./data
+output_dir = ./output
+cache_dir = ./embedding
+embedding_path = ./embedding/GoogleNews-vectors-negative300.txt
+word_dim = 300
+min_freq = 0
+model_name = Attention_CNN
+mode = 1
+seed = 5782
+cuda = 0
+epoch = 30
+dropout = 0.5
+batch_size = 32
+lr = 1.0
+max_len = 100
+pos_dis = 50
+pos_dim = 5
+tag_dim = 10
+filter_num = 100
+window = 3
+device = cuda:0
+model_dir = ./output/Attention_CNN
+--------------------------------------
+start to load data ...
+embedding scale: 19215*300d
+finish loading embeddng!
+finish!
+--------------------------------------
+Attention_CNN(
+  (word_embedding): Embedding(19216, 300)
+  (pos1_embedding): Embedding(103, 5)
+  (pos2_embedding): Embedding(103, 5)
+  (tag_embedding): Embedding(16, 10)
+  (conv): Conv2d(1, 100, kernel_size=(3, 320), stride=(1, 1), padding=(1, 0))
+  (maxpool): MaxPool2d(kernel_size=(100, 1), stride=(100, 1), padding=0, dilation=1, ceil_mode=False)
+  (tanh): Tanh()
+  (we): Linear(in_features=640, out_features=640, bias=True)
+  (wa): Linear(in_features=640, out_features=1, bias=True)
+  (dense): Linear(in_features=740, out_features=19, bias=True)
+)
+traning model parameters:
+word_embedding.weight :  torch.Size([19216, 300])
+pos1_embedding.weight :  torch.Size([103, 5])
+pos2_embedding.weight :  torch.Size([103, 5])
+tag_embedding.weight :  torch.Size([16, 10])
+conv.weight :  torch.Size([100, 1, 3, 320])
+conv.bias :  torch.Size([100])
+we.weight :  torch.Size([640, 640])
+we.bias :  torch.Size([640])
+wa.weight :  torch.Size([1, 640])
+wa.bias :  torch.Size([1])
+dense.weight :  torch.Size([19, 740])
+dense.bias :  torch.Size([19])
+--------------------------------------
+start to train the model ...
+[001] train_loss: 0.705 | dev_loss: 0.925 | micro f1 on dev: 0.7585 >>> save models!
+[002] train_loss: 0.322 | dev_loss: 0.855 | micro f1 on dev: 0.7511 
+[003] train_loss: 0.120 | dev_loss: 0.835 | micro f1 on dev: 0.7933 >>> save models!
+[004] train_loss: 0.029 | dev_loss: 0.825 | micro f1 on dev: 0.7976 >>> save models!
+[005] train_loss: 0.010 | dev_loss: 0.829 | micro f1 on dev: 0.8065 >>> save models!
+[006] train_loss: 0.006 | dev_loss: 0.848 | micro f1 on dev: 0.8110 >>> save models!
+[007] train_loss: 0.005 | dev_loss: 0.861 | micro f1 on dev: 0.8110 
+[008] train_loss: 0.004 | dev_loss: 0.875 | micro f1 on dev: 0.8114 >>> save models!
+[009] train_loss: 0.003 | dev_loss: 0.884 | micro f1 on dev: 0.8149 >>> save models!
+[010] train_loss: 0.003 | dev_loss: 0.892 | micro f1 on dev: 0.8137 
+[011] train_loss: 0.003 | dev_loss: 0.899 | micro f1 on dev: 0.8142 
+[012] train_loss: 0.002 | dev_loss: 0.905 | micro f1 on dev: 0.8153 >>> save models!
+[013] train_loss: 0.002 | dev_loss: 0.910 | micro f1 on dev: 0.8142 
+[014] train_loss: 0.002 | dev_loss: 0.916 | micro f1 on dev: 0.8152 
+[015] train_loss: 0.002 | dev_loss: 0.920 | micro f1 on dev: 0.8150 
+[016] train_loss: 0.002 | dev_loss: 0.925 | micro f1 on dev: 0.8153 >>> save models!
+[017] train_loss: 0.002 | dev_loss: 0.928 | micro f1 on dev: 0.8152 
+[018] train_loss: 0.002 | dev_loss: 0.933 | micro f1 on dev: 0.8153 
+[019] train_loss: 0.002 | dev_loss: 0.935 | micro f1 on dev: 0.8156 >>> save models!
+[020] train_loss: 0.002 | dev_loss: 0.937 | micro f1 on dev: 0.8155 
+[021] train_loss: 0.002 | dev_loss: 0.941 | micro f1 on dev: 0.8156 >>> save models!
+[022] train_loss: 0.002 | dev_loss: 0.944 | micro f1 on dev: 0.8155 
+[023] train_loss: 0.001 | dev_loss: 0.945 | micro f1 on dev: 0.8155 
+[024] train_loss: 0.001 | dev_loss: 0.946 | micro f1 on dev: 0.8148 
+[025] train_loss: 0.001 | dev_loss: 0.950 | micro f1 on dev: 0.8153 
+[026] train_loss: 0.001 | dev_loss: 0.952 | micro f1 on dev: 0.8146 
+[027] train_loss: 0.001 | dev_loss: 0.953 | micro f1 on dev: 0.8146 
+[028] train_loss: 0.001 | dev_loss: 0.954 | micro f1 on dev: 0.8148 
+[029] train_loss: 0.001 | dev_loss: 0.956 | micro f1 on dev: 0.8148 
+[030] train_loss: 0.001 | dev_loss: 0.957 | micro f1 on dev: 0.8146 
+--------------------------------------
+start test ...
+test_loss: 0.941 | micro f1 on test:  0.8156
