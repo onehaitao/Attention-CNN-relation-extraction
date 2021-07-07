@@ -1,4 +1,6 @@
 # Attention-CNN-relation-extraction
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/attention-based-convolutional-neural-network-2/relation-extraction-on-semeval-2010-task-8)](https://paperswithcode.com/sota/relation-extraction-on-semeval-2010-task-8?p=attention-based-convolutional-neural-network-2)
+
 Implementation of [Attention-Based Convolutional Neural Network for Semantic Relation Extraction](https://www.aclweb.org/anthology/C16-1238.pdf).
 
 ## Environment Requirements
